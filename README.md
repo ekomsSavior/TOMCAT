@@ -73,6 +73,8 @@ When you launch the scanner, you'll be guided through an interactive menu:
    - Provides real-time feedback on each test
    - Confirms vulnerabilities with file content validation
 
+![Screenshot_2025-10-28_09_49_24 (1)](https://github.com/user-attachments/assets/c709d392-a9d8-49f9-b893-e721a4f8951f)
+
 4. **Exploitation Phase** (if selected)
    - Automatically attempts to read sensitive files (/etc/passwd, web.xml, configuration files)
    - Tests PUT method availability for potential webshell upload
