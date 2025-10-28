@@ -54,6 +54,8 @@ Windows users may need to install Python from python.org and use Command Prompt 
 
 When you launch the scanner, you'll be guided through an interactive menu:
 
+![Screenshot_2025-10-28_09_48_43 (1)](https://github.com/user-attachments/assets/52c204c4-fb70-45d1-a0ef-f20a553130b1)
+
 1. **Target Configuration**
    - Enter the full Tomcat server URL (http/https, IP or domain)
    - The tool verifies connectivity and Tomcat indicators
