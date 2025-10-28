@@ -36,7 +36,7 @@ pip3 install requests urllib3
 **Usage**
 
 ```bash 
-python3 tomcat_scanner.py
+python3 tomcat.py
 ```
 
 **Platform Support**
