@@ -6,17 +6,50 @@ TOMCAT is a testing tool for identifying and exploiting directory traversal vuln
 
 **Supported Vulnerabilities**
 
-*CVE-2025-55752*
-- Affected Versions: Tomcat 10.1.0-M1 to 10.1.29, 11.0.0-M1 to 11.0.0-M18
-- Impact: Directory traversal allowing arbitrary file read
-- Vector: Specially crafted URL encoding bypass
-
 *CVE-2020-17530* 
 - Affected Versions: Tomcat 7.0.0 to 7.0.108, 8.5.0 to 8.5.60, 9.0.0 to 9.0.40
 - Impact: Directory traversal via rewrite misconfiguration
 - Vector: Double URL encoding attacks
 
-**Features**
+
+*CVE-2025-55752*
+
+**CVE-2025-55752: Technical Summary for PoC**
+
+**Affected Versions:**
+- Tomcat 10.1.0-M1 to 10.1.29
+- Tomcat 11.0.0-M1 to 11.0.0-M18  
+- Tomcat 9.0.0-M1 to 9.0.97 (under specific configurations)
+
+**Vulnerability Description:**
+Path traversal vulnerability in Apache Tomcat's URL processing that fails to properly normalize certain encoded path sequences, allowing attackers to read arbitrary files outside the web root directory.
+
+**Exploitation Vectors:**
+- `....//` sequences that bypass normalization checks
+- Semicolon separators (`..;/..;/`) for alternative path traversal
+- Unicode encoding variations (`%c0%af`) for evasion
+- Double URL encoding payloads
+
+**Impact:**
+- Arbitrary file read (passwd, shadow, web.xml, configuration files)
+- Potential credential and source code exposure
+- Information disclosure leading to further compromise
+
+**How TOMCAT Exploits It:**
+- Multi-payload testing with various encoding techniques
+- Live file content validation to confirm successful traversal
+- Version-aware payload prioritization
+- Integration with RCE chain when PUT method available
+
+**Detection Methodology:**
+The scanner tests multiple traversal patterns against known file paths, analyzing HTTP responses for successful file content indicators while correlating with Tomcat version data to minimize false positives.
+
+**Real-World Validation:**
+Confirmed working against Tomcat 10.0.0+ instances in production environments, successfully retrieving /etc/passwd and web application configuration files.
+
+---
+
+**TOMCAT Features**
 
 - Dual CVE detection with intelligent payload selection
 - Tomcat version fingerprinting and vulnerability correlation  
@@ -200,43 +233,6 @@ TOMCAT is designed for authorized security testing only.
 Users must ensure they have explicit permission to test target systems. 
 Unauthorized use against systems you do not own or have explicit permission to test is illegal and unethical. 
 The developer assumes no liability for misuse of this tool.
-
----
-
-### CVE-2025-55752 Technical Summary for PoC
-
-**CVE-2025-55752: Apache Tomcat Directory Traversal Vulnerability**
-
-**Affected Versions:**
-- Tomcat 10.1.0-M1 to 10.1.29
-- Tomcat 11.0.0-M1 to 11.0.0-M18  
-- Tomcat 9.0.0-M1 to 9.0.97 (under specific configurations)
-
-**Vulnerability Description:**
-Path traversal vulnerability in Apache Tomcat's URL processing that fails to properly normalize certain encoded path sequences, allowing attackers to read arbitrary files outside the web root directory.
-
-**Exploitation Vectors:**
-- `....//` sequences that bypass normalization checks
-- Semicolon separators (`..;/..;/`) for alternative path traversal
-- Unicode encoding variations (`%c0%af`) for evasion
-- Double URL encoding payloads
-
-**Impact:**
-- Arbitrary file read (passwd, shadow, web.xml, configuration files)
-- Potential credential and source code exposure
-- Information disclosure leading to further compromise
-
-**How TOMCAT Exploits It:**
-- Multi-payload testing with various encoding techniques
-- Live file content validation to confirm successful traversal
-- Version-aware payload prioritization
-- Integration with RCE chain when PUT method available
-
-**Detection Methodology:**
-The scanner tests multiple traversal patterns against known file paths, analyzing HTTP responses for successful file content indicators while correlating with Tomcat version data to minimize false positives.
-
-**Real-World Validation:**
-Confirmed working against Tomcat 10.0.0+ instances in production environments, successfully retrieving /etc/passwd and web application configuration files.
 
 ---
 
