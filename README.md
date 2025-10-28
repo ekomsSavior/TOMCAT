@@ -213,7 +213,7 @@ Users must ensure they have explicit permission to test target systems.
 Unauthorized use against systems you do not own or have explicit permission to test is illegal and unethical. 
 The developer assumes no liability for misuse of this tool.
 
-![Untitled_Artwork](https://github.com/user-attachments/assets/a5cfa293-fcbd-4f8c-84a6-9aa9e3e1dcd9)
+![Untitled_Artwork (1)](https://github.com/user-attachments/assets/6a1f7a10-f4c4-4142-9f71-4c623f155b3a)
 
 https://instagram.com/ekoms.is.my.savior
 
