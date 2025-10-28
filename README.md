@@ -164,6 +164,8 @@ socat file:`tty`,raw,echo=0 tcp-listen:4444
 - Live analysis of HTTP responses for successful file read indicators
 - Correlation between detected version and relevant CVE payloads
 
+![Screenshot_2025-10-28_09_49_29 (1)](https://github.com/user-attachments/assets/0ebfccc1-cc61-4778-b119-a6f25240720e)
+
 *Exploitation Engine*
 - Intelligent file path construction for maximum traversal depth
 - Adaptive payload selection based on initial scan results
@@ -210,3 +212,8 @@ TOMCAT is designed for authorized security testing only.
 Users must ensure they have explicit permission to test target systems. 
 Unauthorized use against systems you do not own or have explicit permission to test is illegal and unethical. 
 The developer assumes no liability for misuse of this tool.
+
+![Untitled_Artwork](https://github.com/user-attachments/assets/a5cfa293-fcbd-4f8c-84a6-9aa9e3e1dcd9)
+
+https://instagram.com/ekoms.is.my.savior
+
