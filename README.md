@@ -12,9 +12,7 @@ TOMCAT is a testing tool for identifying and exploiting directory traversal vuln
 - Vector: Double URL encoding attacks
 
 
-*CVE-2025-55752*
-
-**CVE-2025-55752: Technical Summary for PoC**
+**CVE-2025-55752**
 
 **Affected Versions:**
 - Tomcat 10.1.0-M1 to 10.1.29
