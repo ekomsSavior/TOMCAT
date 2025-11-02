@@ -43,7 +43,7 @@ Path traversal vulnerability in Apache Tomcat's URL processing that fails to pro
 The scanner tests multiple traversal patterns against known file paths, analyzing HTTP responses for successful file content indicators while correlating with Tomcat version data to minimize false positives.
 
 **Real-World Validation:**
-Confirmed working against Tomcat 10.0.0+ instances in production environments, successfully retrieving /etc/passwd and web application configuration files.
+Confirmed working against Tomcat 10.0.0+ instances in production environment.
 
 ---
 
